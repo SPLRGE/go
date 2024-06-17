@@ -9,15 +9,24 @@
     "deploy": "nuxthub deploy",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
-    "typecheck": "nuxt typecheck"
+    "lint:fix": "eslint . --fix",
+    "typecheck": "nuxt typecheck",
+    "db:generate": "drizzle-kit generate"
   },
   "dependencies": {
     "@nuxt/eslint": "^0.3.13",
+    "@nuxt/fonts": "^0.7.0",
+    "@nuxt/image": "^1.7.0",
+    "@nuxt/ui": "^2.17.0",
     "@nuxthub/core": "^0.6.11",
-    "nuxt": "^3.12.1"
+    "drizzle-orm": "^0.31.2",
+    "nuxt": "^3.12.1",
+    "nuxt-auth-utils": "^0.0.25",
+    "nuxt-icon": "^0.6.10"
   },
   "devDependencies": {
     "@nuxt/eslint-config": "^0.3.13",
+    "drizzle-kit": "^0.22.7",
     "eslint": "^9.4.0",
     "vue-tsc": "^2.0.21",
     "wrangler": "^3.60.1"

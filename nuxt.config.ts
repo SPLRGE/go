@@ -1,26 +1,36 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  // Nuxt 4 directory structure and features
-  // https://nuxt.com/docs/getting-started/upgrade#testing-nuxt-4
   future: { compatibilityVersion: 4 },
-  // Nuxt Modules
-  // https://nuxt.com/modules
+
   modules: [
     '@nuxthub/core',
-    '@nuxt/eslint'
+    '@nuxt/eslint',
+    "nuxt-auth-utils",
+    "@nuxt/image",
+    "nuxt-icon",
+    "@nuxt/fonts",
+    "@nuxt/ui"
   ],
+
   hub: {
     database: true,
-    kv: true,
-    blob: true,
-    cache: true,
   },
+
+  colorMode: {
+    preference: 'dark'
+  },
+
+  fonts: {
+    families: [
+      { name: 'Space Grotesk', provider: 'google' }
+    ]
+  },
+
   nitro: {
     experimental: {
-      // Enable Server API documentation within NuxtHub
       openAPI: true
     }
   },
-  // Development
+
   devtools: { enabled: true },
 })
