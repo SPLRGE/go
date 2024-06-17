@@ -14,5 +14,6 @@ const session = useUserSession()
     <div>
         <p>logged only</p>
     {{ session.loggedIn }}
+    {{  session }}
     </div>
 </template>
