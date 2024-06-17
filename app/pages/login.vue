@@ -5,9 +5,9 @@ useSeoMeta({
 </script>
 
 <template>
-    <div class="text-center w-full mt-12">
+    <div class="mt-12 w-full text-center">
         <h1 class="text-3xl font-bold">Login</h1>
-        <div class="flex flex-col items-center space-y-4 my-4">
+        <div class="my-4 flex flex-col items-center space-y-4">
             <!--<PrimaryButton variant="black" @click="() => navigateTo('/auth/github')" icon="mdi:github" label="Github" />-->
         </div>
     </div>

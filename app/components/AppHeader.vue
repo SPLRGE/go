@@ -1,5 +1,5 @@
 <template>
-    <header class="flex flex-row justify-between items-center px-8 bg-slate-900">
+    <header class="flex flex-row items-center justify-between bg-slate-900 px-8">
         <NuxtLink to="https://splrge.dev" :external="true">
             <NuxtImg src="https://s3.splrge.dev/assets/brand/logo_color_banner.png" class="h-16" />
         </NuxtLink>

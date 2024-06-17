@@ -1,6 +1,8 @@
 // @ts-check
 import withNuxt from './.nuxt/eslint.config.mjs'
+// @ts-ignore
+import tailwind from 'eslint-plugin-tailwindcss'
 
 export default withNuxt(
-  // Your custom configs here
+  ...tailwind.configs["flat/recommended"]
 )

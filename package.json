@@ -28,6 +28,7 @@
     "@nuxt/eslint-config": "^0.3.13",
     "drizzle-kit": "^0.22.7",
     "eslint": "^9.4.0",
+    "eslint-plugin-tailwindcss": "^3.17.3",
     "vue-tsc": "^2.0.21",
     "wrangler": "^3.60.1"
   }
