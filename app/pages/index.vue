@@ -7,11 +7,11 @@ useSeoMeta({
 <template>
     <div>
         <div class="mx-auto mt-24 flex w-1/2 flex-col items-center space-y-4">
-            <h1 class="text-3xl font-bold">SPLRGE Go - Redirect your users</h1>
-            <span>Available on <NuxtLink
-class="text-blue-500 hover:underline" to="https//github.com/splrge/go"
+            <h1 class="text-6xl font-bold">SPLRGE Go: Link less, share more.</h1>
+            <span class="text-gray-200">Open source on <NuxtLink
+class="text-blue-500 hover:underline" to="https://github.com/splrge/go"
                     :external="true">Github</NuxtLink></span>
-            <!--<PrimaryButton variant="purple" @click="() => navigateTo('/admin')" icon="ph:lightning" label="Start now" />-->
+                <UButton color="primary" variant="outline" to="/auth/github" icon="i-heroicons-bolt" label="Start now" />
         </div>
     </div>
 </template>
