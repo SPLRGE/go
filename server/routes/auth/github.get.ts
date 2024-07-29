@@ -28,6 +28,6 @@ export default oauth.githubEventHandler({
             }
         })
 
-        return sendRedirect(event, '/dashboard')
+        return sendRedirect(event, '/admin/dashboard')
     }
 })
