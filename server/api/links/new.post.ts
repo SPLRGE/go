@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import crypto from 'node:crypto'
+import { init } from '@paralleldrive/cuid2'
 import { links } from '~~/server/database/schema'
 
 const schema = z.object({
@@ -10,16 +10,18 @@ export default defineEventHandler(async (event) => {
     const { user } = await requireUserSession(event)
     const { url } = await readValidatedBody(event, body => schema.parse(body))
 
-    console.log(user.id)
+    const generatedUid = init({
+        length: 8
+    })()
 
     await useDrizzle().insert(links).values({
-        uid: crypto.randomBytes(4).toString("hex"),
+        uid: generatedUid,
         url,
         user_id: user.id
     })
 
     return {
-        uid: crypto.randomBytes(4).toString("hex")
+        uid: generatedUid
     }
 
 })
