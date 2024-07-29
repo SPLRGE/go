@@ -2,8 +2,6 @@
 export default defineNuxtConfig({
   future: { compatibilityVersion: 4 },
 
-  ssr: false,
-
   modules: [
     '@nuxthub/core',
     '@nuxt/eslint',
