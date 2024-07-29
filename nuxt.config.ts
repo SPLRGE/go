@@ -28,7 +28,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      hostname: 'https://splrge.link'
+      hostname: 'splrge.link'
     }
   },
 
