@@ -7,7 +7,7 @@ useSeoMeta({
 <template>
     <div>
         <ULandingHero
-title="✨ Link less, share more" description="A simple, fast, and secure way to share links with your community."
+title="⚡ Link less, share more" description="A simple, fast, and secure way to share links with your community."
             :links="[{ label: 'Start now', icon: 'i-heroicons-bolt', color: 'primary', variant: 'solid', size: 'xl', to: '/auth/github', external: true }]"
             class="bg-grid h-screen">
             <template #headline>
