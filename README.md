@@ -1,5 +1,5 @@
 ![splrge link banner](https://s3.splrge.dev/assets/brand/products/splrge_link_banner.png)
-# ⚡ Short less, link more
+# ⚡ Link less, share more
 *Try it now at <https://splrge.link>*
 <br>
 <br>
