@@ -1,14 +1,10 @@
-import { z } from 'zod'
 import { init } from '@paralleldrive/cuid2'
 import { links } from '~~/server/database/schema'
-
-const schema = z.object({
-    url: z.string().url()
-})
+import { createLinkSchema } from '~~/server/utils/schemas'
 
 export default defineEventHandler(async (event) => {
     const { user } = await requireUserSession(event)
-    const { url } = await readValidatedBody(event, body => schema.parse(body))
+    const { url } = await readValidatedBody(event, body => createLinkSchema.parse(body))
 
     const generatedUid = init({
         length: 8

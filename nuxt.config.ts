@@ -9,21 +9,41 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "nuxt-icon",
     "@nuxt/fonts",
-    "@nuxt/ui"
+    "@nuxt/ui",
+    "@nuxtjs/plausible"
+  ],
+
+  extends: [
+    '@nuxt/ui-pro'
   ],
 
   hub: {
     database: true,
   },
 
-  colorMode: {
-    preference: 'dark'
-  },
-
   fonts: {
     families: [
       { name: 'Space Grotesk', provider: 'google' }
     ]
+  },
+
+  components: [
+    {
+      path: '~/components',
+      pathPrefix: false,
+    },
+  ],
+
+  ui: {
+    icons: ['heroicons', 'simple-icons']
+  },
+
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: 'en'
+      }
+    }
   },
 
   runtimeConfig: {
