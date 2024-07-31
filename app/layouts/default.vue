@@ -25,7 +25,7 @@
             to: 'https://splrge.dev',
         }, {
             label: 'Github',
-            to: 'https://gihub.com/splrge'
+            to: 'https://github.com/splrge'
         }, {
             label: 'Discord',
             to: 'https://splrge.dev/discord'
