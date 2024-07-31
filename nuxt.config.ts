@@ -47,7 +47,7 @@ export default defineNuxtConfig({
   },
 
   plausible: {
-    apiHost: 'https://analytics.splrge.dev',
+    apiHost: 'https://dont-block-us.splrge.dev',
     ignoredHostnames: ['localhost', 'go.nuxt.dev']
   },
 
