@@ -46,17 +46,6 @@ export default defineNuxtConfig({
     }
   },
 
-  plausible: {
-    apiHost: 'https://dont-block-us.splrge.dev',
-    ignoredHostnames: ['localhost', 'go.nuxt.dev']
-  },
-
-  runtimeConfig: {
-    public: {
-      hostname: 'splrge.link'
-    }
-  },
-
   routeRules: {
     '/': {
       redirect: '/admin/home' // Because of the server route [uid] (/server/routes/[uid].ts), pages at the root will be ignored, all the frontend is on /admin, a redirection is performed if the user arrives at the root.
