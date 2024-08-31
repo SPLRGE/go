@@ -1,22 +1,25 @@
-import { links } from "../database/schema"
-import { eq } from "drizzle-orm"
+import {clicks, links} from "../database/schema"
+import {eq} from "drizzle-orm"
 
-export default defineEventHandler( async (event) => {
-    const uid = getRouterParam(event, 'uid')
+export default defineEventHandler(async (event) => {
+  const uid = getRouterParam(event, 'uid')
 
-    console.log('route uid by server')
+  if (!uid) throw createError(400, 'Bad Request')
 
-    if (!uid || typeof uid !== 'string') {
-        return sendRedirect(event, 'https://splrge.dev')
-    }
+  const url = await useDrizzle().select().from(links).where(
+    eq(links.uid, uid)
+  ).limit(1)
 
-    const url = await useDrizzle().select().from(links).where(
-        eq(links.uid, uid)
-    ).limit(1)
-    
-    if (url.length === 0) {
-        sendRedirect(event, 'https://splrge.dev')
-    } else {
-        sendRedirect(event, url[0].url)
-    }
+  if (url.length === 0) {
+    return sendRedirect(event, 'https://splrge.dev')
+  } else {
+    await useDrizzle().insert(clicks).values({
+      link_id: url[0].id,
+      ip: getRequestIP(event) ?? null,
+      user_agent: getRequestHeader(event, 'User-Agent'),
+      referer: getRequestHeader(event, 'Referer'),
+      timestamp: Date.now()
+    })
+    return sendRedirect(event, url[0].url)
+  }
 })

@@ -13,3 +13,12 @@ export const links = sqliteTable('links', {
     url: text('url').notNull(),
     user_id: integer('user_id').references(() => users.id),
 })
+
+export const clicks = sqliteTable('clicks', {
+  id: integer('id').primaryKey({ autoIncrement: true }),
+  link_id: integer('link_id').references(() => links.id),
+  ip: text('ip'),
+  user_agent: text('user_agent'),
+  referer: text('referer'),
+  timestamp: integer('timestamp').notNull(),
+})
