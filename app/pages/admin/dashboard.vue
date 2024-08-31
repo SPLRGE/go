@@ -34,7 +34,7 @@ function onTabChange(index: number) {
             </UDashboardToolbar>
             <UDashboardPanelContent>
                 <CreateLinkTab v-show="activeTab === 0" />
-                <MyLinksTab v-show="activeTab === 1" />
+                <LazyMyLinksTab v-show="activeTab === 1" />
             </UDashboardPanelContent>
         </UDashboardPanel>
     </UDashboardPage>
